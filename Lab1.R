@@ -6,6 +6,9 @@
 # Jairo Cugliari
 # S1 2018–2019
 
+# ici on fait l'estimation en une dimension 
+# lors des prochains tps on le fera en plus grande dimension
+
 # 1 Simulation par la méthode de rejet ####
 # 1.1. Écrire sur R la fonction f_tri(x) que calcule la valeur de la densité f(x) d’une variable aléatoire ####
 # triangulaire sur [0,2] pour l’argument x donné en entrée.
@@ -74,6 +77,7 @@ lines(density(echantillon))
 # 3 Estimation de la densité par noyau ####
 
 # 3.1. Générer un échantillon X1,...,Xn de taille n=100 où XiTriangulaire(0,2). ####
+# ma version ####
 #fonction triangulaire
 f_tri_3 <- function(x) {
   SUP01 <- (0<=x) & (x<1)
@@ -97,14 +101,38 @@ echantillon_3 <- f_tri_vect_3(n)
 #test avec l'histogramme
 hist(echantillon_3)
 
+# version corrigée ####
+nreps <- 1000
+Observations <- numeric(nreps)
 # 3.2. Utiliser la fonction density de R pour estimer la densité de l’échantillon. Comparer le résultat de ####
 # l’estimation quand l’on fait varier la largeur de fenêtre h. En particulier utiliser les valeurs heuristiques
 # : h=1.06ˆn−1/5 où ˆ=min{ˆs,IQR/1.34} et ˆs est l’écart type des données.
 
 ?density
 
+#explication de jairo 
+#kernel density estimator 
+k_den_estimator <- function(x){
+  fx <- 0
+  return fx
+}
+
+#s estimateur de l'écart type
+#IQR = intervalle entre quartile
+
+
+# On fait varier h
+# dans le cas gaussien la valeur de h est optimal avec cette formule
+# (le K(2) correspond à une convolution, dans le cas d'une normale K(2) = N(0,2))
+# mais rien ne dit que c'est le cas en vrai
+# le point 3 est donc de trouver une formule de k bonne.
+
 # 3.3. Écrire sur R la fonction riskkde(obs, h) qui estime le risque J de l’estimateur à noyau de la densité ####
 # avec une largeur de fenêtre h (cf. équation 6.35 dans Wasserman (2006) pour la formule).
+#voir formule 6.35
+#k_étoile <- dnorm(x, 0, sqrt((2)) première partie de K étoile -> N(0,2)
+#k_étoile <- dnorm(x, 0, sqrt((2)-2dnorm(x))
+#voir capture du cours Lab12
 
 # 3.4. Estimer la courbe de risque J(h). Comparer la valeur de h=argminJ(h) avec la valeurs heuristiques ####
 # pour h.
