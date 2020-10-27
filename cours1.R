@@ -1,4 +1,5 @@
 #cours 1 Manifold Learning
+#chapitre 6 du livre de Wasserman
 
 # Infos.1 : Pour changer l'encoding ...####
 
