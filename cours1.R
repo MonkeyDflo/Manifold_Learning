@@ -1,8 +1,8 @@
 #cours 1 Manifold Learning
 
-# Infos : Pour changer l'encoding ...####
+# Infos.1 : Pour changer l'encoding ...####
 
-#exemple 1 ####
+# Exemple 1 ####
 #je génère des x selon une loi
 #J'envoie les x à une autre personne 
 #comment fait elle pour retoruver la loi de densité ? 
@@ -18,7 +18,7 @@
 #Shapiro 
 #Darling
 
-#Comment fait-on pour estimer la loi de densité si nous n'avons pas de normalité ? #### 
+# Q : Comment fait-on pour estimer la loi de densité si nous n'avons pas de normalité ? #### 
 
 data("faithful")
 
@@ -26,3 +26,29 @@ boxplot(data("faithful"))
 
 #diagramme de piche et de feuilles
 stem(faithful$eruptions)
+
+# suite cours ####
+# 1. histogramme ####
+#estimateur à saut
+#pas continue
+#pas dérivable à droite et à gauche de certains points.
+
+# 2. polynôme de fréquence ####
+#estimateur linéaire par morceau
+#continue 
+#pas dérivable 
+# + de régularité
+
+# 3. estimateur à noyaux ####
+
+
+
+#KDE ####
+#K = noyau 
+#h = largeur de fenêtre
+# On remplace les masses de proba par une esti étalée autour du point
+# Estimateur globale = somme de chacune des densités locales
+#K = peut etre assimilée à une loi de proba
+
+# Pour bien estimer h ####
+# perte quadratic #
