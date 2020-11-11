@@ -106,7 +106,7 @@ nreps <- 1000
 Observations <- numeric(nreps)
 # 3.2. Utiliser la fonction density de R pour estimer la densité de l’échantillon. Comparer le résultat de ####
 # l’estimation quand l’on fait varier la largeur de fenêtre h. En particulier utiliser les valeurs heuristiques
-# : h=1.06ˆn−1/5 où ˆ=min{ˆs,IQR/1.34} et ˆs est l’écart type des données.
+# : h=1.06ˆn−1/5 où ˆ=min{ˆs,IQR/1.34} et ˆs est l’écart type des données.
 
 ?density
 
